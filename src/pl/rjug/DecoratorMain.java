@@ -6,19 +6,23 @@ import java.io.IOException;
 
 public class DecoratorMain {
 
+    public static final String FILE_PATH = "file/very_long_file.txt";
+
     public static void main(String[] args) {
         for (int i = 0; i < 10; i++) {
-            int nrOfChars = 51490;
-            char[] result = new char[nrOfChars];
-            try {
-//            FileReader bufferedReader = new FileReader("file/very_long_file.txt");
-                BufferedReader bufferedReader = new BufferedReader(new FileReader("file/very_long_file.txt"));
+            try (BufferedReader reader = new BufferedReader(
+                    new FileReader(
+                            FILE_PATH
+                    ))) {
+//            try (FileReader reader = new FileReader(FILE_PATH)) {
+                int ch;
+                StringBuilder stringBuilder = new StringBuilder();
                 long startTime = System.nanoTime();
-                int nrOfCharsRead = bufferedReader.read(result, 0, nrOfChars);
+                while ((ch = reader.read()) != -1) {
+                    stringBuilder.append((char) ch);
+                }
                 long endTime = System.nanoTime();
-                System.out.println("Przeczytano: " + nrOfCharsRead);
                 System.out.println(endTime - startTime);
-
             } catch (IOException e) {
                 e.printStackTrace();
             }
