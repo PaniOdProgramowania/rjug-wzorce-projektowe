@@ -7,6 +7,11 @@ public class Main {
             Thread.sleep(5000);
             versionWithConcatenation();
         }
+
+        StringBuilder stringBuilder = new StringBuilder("hello ");
+        String nullString = null;
+        stringBuilder.append(nullString);
+        System.out.println(stringBuilder.toString());
     }
 
     private static void versionWithStringBuffer() {
