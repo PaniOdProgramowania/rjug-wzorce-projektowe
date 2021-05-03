@@ -1,6 +1,6 @@
 package pl.rjug;
 
-public class Main {
+public class StringBuilderMain {
 
     public static void main(String[] args) throws InterruptedException {
         for (int j = 0; j < 10; j++) {
