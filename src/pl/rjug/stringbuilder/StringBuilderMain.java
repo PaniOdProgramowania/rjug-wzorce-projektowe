@@ -1,4 +1,4 @@
-package pl.rjug;
+package pl.rjug.stringbuilder;
 
 public class StringBuilderMain {
 
