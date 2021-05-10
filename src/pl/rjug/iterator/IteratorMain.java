@@ -1,7 +1,6 @@
 package pl.rjug.iterator;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class IteratorMain {
@@ -14,14 +13,14 @@ public class IteratorMain {
         names.set(0, "Adrian");
         names.remove("Adrian");
 
-        for (String name : names) {
-            System.out.println(name);
-        }
-
-        Iterator<String> iterator = names.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
-        }
+//        for (String name : names) {
+//            System.out.println(name);
+//        }
+//
+//        Iterator<String> iterator = names.iterator();
+//        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+//        }
 
         for (String name : names) {
             names.remove(name);
